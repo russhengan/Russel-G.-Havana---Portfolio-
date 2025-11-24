@@ -61,3 +61,65 @@ export const CONTACT = {
   phoneNo: "+639 610 797 989 ",
   email: "russhavana24@gmail.com",
 };
+
+export const WEEKLY_REPORTS = [
+  { label: "Week 1 Progress Report", file: "/ojt/weekly/Week 1 Progress Report.pdf" },
+  { label: "Week 2 Progress Report", file: "/ojt/weekly/Week 2 Progress Report.pdf" },
+  { label: "Week 3 Progress Report", file: "/ojt/weekly/Week 3 Progress Report.pdf" },
+  { label: "Week 4 Progress Report", file: "/ojt/weekly/Week 4 Progress Report.pdf" },
+  { label: "Week 5 Progress Report", file: "/ojt/weekly/Week 5 Progress Report.pdf" },
+  { label: "Week 6 Progress Report", file: "/ojt/weekly/Week 6 Progress Report.pdf" },
+  { label: "Week 7 Progress Report", file: "/ojt/weekly/Week 7 Progress Report.pdf" },
+  { label: "Week 8 Progress Report", file: "/ojt/weekly/Week 8 Progress Report.pdf" },
+  { label: "Week 9 Progress Report", file: "/ojt/weekly/Week 9 Progress Report.pdf" },
+  { label: "Week 10 Progress Report", file: "/ojt/weekly/Week 10 Progress Report.pdf" },
+  { label: "Week 11 Progress Report", file: "/ojt/weekly/Week 11 Progress Report.pdf" },
+  { label: "Week 12 Progress Report", file: "/ojt/weekly/Week 12 Progress Report.pdf" },
+  { label: "Week 13 Progress Report", file: "/ojt/weekly/Week 13 Progress Report.pdf" },
+  { label: "Week 14 Progress Report", file: "/ojt/weekly/Week 14 Progress Report.pdf" },  
+  { label: "Week 15 Progress Report", file: "/ojt/weekly/Week 15 Progress Report.pdf" },
+  { label: "Week 16 Progress Report", file: "/ojt/weekly/Week 16 Progress Report.pdf" },
+  { label: "Week 17 Progress Report", file: "/ojt/weekly/Week 17 Progress Report.pdf" },
+  { label: "Week 18 Progress Report", file: "/ojt/weekly/Week 18 Progress Report.pdf" },
+  { label: "Week 19 Progress Report", file: "/ojt/weekly/Week 19 Progress Report.pdf" },
+  { label: "Week 20 Progress Report", file: "/ojt/weekly/Week 20 Progress Report.pdf" },
+  { label: "Week 21 Progress Report", file: "/ojt/weekly/Week 21 Progress Report.pdf" },
+];
+
+export const DTR_LIST = [
+  "/ojt/dtr/DTR-1.jpg",
+  "/ojt/dtr/DTR-2.jpg",
+  "/ojt/dtr/DTR-3.jpg",
+  "/ojt/dtr/DTR-4.jpg",
+  "/ojt/dtr/DTR-5.jpg",
+  "/ojt/dtr/DTR-6.jpg",
+  "/ojt/dtr/DTR-7.jpg",
+  "/ojt/dtr/DTR-8.jpg",
+  "/ojt/dtr/DTR-9.jpg",
+  "/ojt/dtr/DTR-10.jpg",
+];
+
+export const ACTIVITY_PHOTOS = [
+  {
+    src: "/ojt/photos/Act-1.jpg",
+    caption: "QA Testing – Laptop Setup",
+  },
+  {
+    src: "/ojt/photos/activity2.png",
+    caption: "Digital Signage Inspection",
+  },
+  {
+    src: "/ojt/photos/activity3.png",
+    caption: "UPS Quality Assurance",
+  },
+];
+
+export const NTI_GALLERY = [
+  { src: "/nti/lab1.jpg" },
+  { src: "/nti/lab2.jpg" },
+  { src: "/nti/switch-testing.jpg" },
+  { src: "/nti/ups-testing.jpg" },
+  { src: "/nti/digital-signage.jpg" },
+  { src: "/nti/server-rack.jpg" },
+  { src: "/nti/workspace.jpg" },
+];
