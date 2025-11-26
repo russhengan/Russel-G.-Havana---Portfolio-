@@ -1,102 +1,150 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/about-22.jpg";
-import { motion } from "framer-motion";
-
-const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: delay },
-  },
-});
-
-const buttonVariant = {
-  hidden: { x: -50, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.6, delay: 1.5 },
-  },
-  hover: {
-    scale: 1.05,
-    transition: { duration: 0.2 },
-  },
-  tap: {
-    scale: 0.95,
-  },
-};
+import { motion, useMotionValue } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/public/Havana, Russel G. - Resume.pdf"; // Now served from public/
-    link.download = "Russel-Havana_Resume.pdf"; // Name to save as
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  // Spotlight effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e) => {
+    mouseX.set(e.clientX);
+    mouseY.set(e.clientY);
+  };
+
+  // 3D Tilt for profile picture
+  const tiltX = useMotionValue(0);
+  const tiltY = useMotionValue(0);
+
+  const handleTilt = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    tiltX.set(y * -0.03);
+    tiltY.set(x * 0.03);
+  };
+
+  const resetTilt = () => {
+    tiltX.set(0);
+    tiltY.set(0);
   };
 
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap lg:flex-nowrap items-center">
-        {/* Left Text Section */}
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+    <div
+      className="border-b border-neutral-900 pb-20 relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      {/* 🌟 COMET PARTICLE BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="animate-pulse absolute top-10 left-1/3 w-1 h-1 bg-purple-400 rounded-full blur-sm"></div>
+        <div className="animate-ping absolute bottom-20 right-1/4 w-2 h-2 bg-pink-400 rounded-full"></div>
+        <div className="animate-bounce absolute top-1/2 right-1/3 w-1 h-1 bg-blue-300 rounded-full"></div>
+      </div>
+
+      {/* 🌟 SPOTLIGHT FOLLOWING MOUSE */}
+      <motion.div
+        className="pointer-events-none absolute -inset-0 bg-gradient-to-r from-purple-800/10 via-pink-500/10 to-transparent opacity-40 blur-[100px]"
+        style={{ x: mouseX, y: mouseY }}
+      />
+
+      {/* MAIN CONTENT CONTAINER */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* LEFT SIDE */}
+          <div className="relative">
+            {/* GLASSMORPHISM BACK CARD */}
+            <motion.div
+              className="absolute -top-8 -left-6 w-[380px] h-[220px]"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            />
+
+            {/* NAME */}
             <motion.h1
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-15 lg:text-8xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="pb-4 font-thin tracking-tight text-[clamp(40px,6vw,90px)] leading-[0.95]"
             >
               Russel Havana
             </motion.h1>
+
+            {/* JOB TITLE — ANIMATED GRADIENT + TYPING */}
             <motion.span
-              variants={container(0.5)}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-transparent bg-clip-text bg-gradient-to-r 
+              from-pink-400 via-purple-400 to-blue-400 
+              animate-gradient-x text-[clamp(20px,3vw,36px)] font-light"
             >
-              QA Intern in Northgate Technologies Inc. | Software Developer
+              <Typewriter
+                words={[
+                  "QA Intern in Northgate Technologies Inc.",
+                  "Software Developer",
+                  "Mobile Developer",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={60}
+                deleteSpeed={40}
+                delaySpeed={2000}
+              />
             </motion.span>
+
+            {/* DESCRIPTION */}
             <motion.p
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tighter"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-6 max-w-xl font-light tracking-tight leading-relaxed text-justify"
             >
               {HERO_CONTENT}
             </motion.p>
 
-            {/* Download CV Button */}
+            {/* DOWNLOAD CV BUTTON */}
             <motion.button
-              variants={buttonVariant}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              whileTap="tap"
-              onClick={handleDownloadCV}
-              className="mt-4 px-8 py-3 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-8 px-8 py-3 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 
+              text-white font-medium rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/Havana, Russel G. - Resume.pdf";
+                link.download = "Russel-Havana_Resume.pdf";
+                link.click();
+              }}
             >
               Download CV
             </motion.button>
           </div>
-        </div>
 
-        {/* Right Image Section */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="relative">
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              src={profilePic}
-              alt="Russel Havana"
-              className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 border-gray-600/50"
-            />
-            {/* Decorative background blur */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-300/20 via-slate-500/20 to-purple-500/20 rounded-3xl blur-xl -z-10 transform scale-110"></div>
-          </div>
+          {/* RIGHT SIDE — FLOATING + 3D TILT PROFILE PIC */}
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            style={{ rotateX: tiltX, rotateY: tiltY }}
+            onMouseMove={handleTilt}
+            onMouseLeave={resetTilt}
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="relative">
+              <img
+                src={profilePic}
+                className="w-72 h-72 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-2xl border border-white/20"
+              />
+
+              {/* FIXED SMOOTH GLOW — NO MORE LINES */}
+              <div
+                className="absolute inset-0 
+      bg-gradient-radial from-purple-500/25 via-pink-400/20 to-transparent
+      rounded-3xl blur-3xl -z-10 scale-150"
+              ></div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
