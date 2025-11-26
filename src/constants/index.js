@@ -1,6 +1,6 @@
 
 //Bookify Images
-import Bookify1 from "../assets/projects/Bookify1.png";
+import Bookify1 from "../assets/projects/Bookify1.png"
 import Bookify2 from "../assets/projects/Bookify2.png";
 import Bookify3 from "../assets/projects/Bookify3.png";
 import Bookify4 from "../assets/projects/Bookify4.png";
