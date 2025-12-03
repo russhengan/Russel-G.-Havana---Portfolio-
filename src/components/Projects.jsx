@@ -36,7 +36,7 @@ const Projects = () => {
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="rounded bg-neutral-900 px-3 py-1 text-sm font-medium text-purple-900"
+                    className="rounded-full bg-neutral-900/50 border border-neutral-700 px-3 py-1.5 text-xs font-medium text-purple-400 hover:border-purple-500 transition-colors"
                   >
                     {tech}
                   </span>

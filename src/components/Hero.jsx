@@ -84,7 +84,7 @@ const Hero = () => {
                 words={[
                   "QA Intern in Northgate Technologies Inc.",
                   "Software Developer",
-                  "Mobile Developer",
+                  "Application Developer",
                 ]}
                 loop={0}
                 cursor
