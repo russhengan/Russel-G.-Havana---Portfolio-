@@ -32,7 +32,7 @@ const Hero = () => {
 
   return (
     <div
-      className="border-b border-neutral-900 pb-20 relative overflow-hidden"
+      className="border-b border-neutral-900 pb-20 pt-10 sm:pt-16 relative overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* 🌟 COMET PARTICLE BACKGROUND */}

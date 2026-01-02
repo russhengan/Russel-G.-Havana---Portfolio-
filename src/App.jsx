@@ -21,7 +21,7 @@ const App = () => {
 
       <GlowingCursor />
 
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-8 pt-20">
         <Navbar />
         <Hero />
         <div id="about">
