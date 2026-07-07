@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="mx-auto px-4 sm:px-8 py-4 sm:py-6 flex items-center justify-between">
           {/* Logo */}
           <div className="flex flex-shrink-0 items-center">
-            <img className="w-10 sm:w-12 rounded-full border-2 border-purple-600 shadow-lg" src={logo} alt="logo"/>
+            <img className="w-10 sm:w-12 rounded-full border-2 border-purple-600 shadow-lg" src={logo} alt="Russel Havana logo" loading="lazy"/>
           </div>
 
           {/* Navigation Links - Center (Desktop Only) */}

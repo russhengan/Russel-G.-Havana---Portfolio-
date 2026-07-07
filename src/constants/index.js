@@ -141,9 +141,7 @@ import Warehouse6 from "../assets/NTI Pics/Warehouse-6.jpg";
 import Warehouse7 from "../assets/NTI Pics/Warehouse-7.jpg";
 
 
-export const HERO_CONTENT = `I am a 4th-year Bachelor of Science in Information Technology student at Pamantasan ng Lungsod ng Valenzuela. Throughout my academic journey, I have developed a strong interest in software development and have been continuously enhancing my skills through various projects and real-world applications. I am passionate about creating well-designed, efficient, and user-centered digital solutions, and I consistently strive to improve my technical expertise, problem-solving abilities, and overall professionalism as I prepare to pursue opportunities in the industry..
-
-Driven by curiosity and a desire to grow, I’m eager to contribute to real-world projects, collaborate with dynamic teams, and continuously evolve as a developer. I’m now actively seeking internship opportunities where I can apply my knowledge, gain industry experience, and further sharpen my technical and problem-solving abilities.`;
+export const HERO_CONTENT = `BS Information Technology student from Pamantasan ng Lungsod ng Valenzuela with a passion for building innovative software solutions. I create clean, efficient, and user-centered applications. Currently seeking my first professional role to contribute to real-world projects and grow as a developer.`;
 
 export const ABOUT_TEXT = `My passion for software development drives me to create innovative solutions that solve problems and enhance user experiences. As a 4th-year BS Information Technology student at Pamantasan ng Lungsod ng Valenzuela, I thrive on transforming complex challenges into elegant, efficient solutions, combining analytical thinking with creativity. What sets me apart is my dedication to continuous learning and collaboration, approaching each project as an opportunity to push boundaries and make a tangible impact. I view software development not just as a technical skill, but as a way to turn ideas into meaningful digital experiences that leave a lasting impression.`;
 

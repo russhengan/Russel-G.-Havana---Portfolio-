@@ -198,7 +198,7 @@ const OJT = () => {
                   className="rounded-2xl overflow-hidden shadow-2xl border border-neutral-700 bg-neutral-900/50 backdrop-blur-xl cursor-pointer"
                   onClick={() => setSelectedImage(MissionImg)}
                 >
-                  <img src={MissionImg} className="w-full h-auto object-cover" />
+                  <img src={MissionImg} alt="NTI Mission Statement" loading="lazy" className="w-full h-auto object-cover" />
                   <div className="p-4 bg-neutral-900/60 border-t border-neutral-800 flex justify-center">
                     <p className="text-neutral-300 font-semibold text-lg">
                       NTI MISSION
@@ -212,7 +212,7 @@ const OJT = () => {
                   className="rounded-2xl overflow-hidden shadow-2xl border border-neutral-700 bg-neutral-900/50 backdrop-blur-xl cursor-pointer"
                   onClick={() => setSelectedImage(VisionImg)}
                 >
-                  <img src={VisionImg} className="w-full h-auto object-cover" />
+                  <img src={VisionImg} alt="NTI Vision Statement" loading="lazy" className="w-full h-auto object-cover" />
                   <div className="p-4 bg-neutral-900/60 border-t border-neutral-800 flex justify-center">
                     <p className="text-neutral-300 font-semibold text-lg">
                       NTI VISION
@@ -314,6 +314,8 @@ const OJT = () => {
                   >
                     <img
                       src={photo.src}
+                      alt={`${photo.category} - ${photo.desc}`}
+                      loading="lazy"
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
@@ -363,6 +365,8 @@ const OJT = () => {
                     <div className="relative overflow-hidden rounded-t-2xl shadow-lg border-l border-t border-r border-neutral-700 bg-neutral-900/40 cursor-pointer h-56 mb-0">
                       <img
                         src={work.image}
+                        alt={work.title}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onClick={() => setSelectedImage(work.image)}
                       />
@@ -451,6 +455,8 @@ const OJT = () => {
                     <div className="relative overflow-hidden rounded-2xl shadow-lg border border-neutral-700 bg-neutral-900/40 h-64 mb-4">
                       <img
                         src={seminar.image}
+                        alt={seminar.title}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                         onClick={() => {
                           setSelectedSeminar(seminar);
@@ -684,6 +690,8 @@ const OJT = () => {
                   <div className="relative overflow-hidden rounded-2xl shadow-xl h-80 bg-neutral-800">
                     <img
                       src={selectedWork.images?.[workImageIndex] || selectedWork.image}
+                      alt={selectedWork.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -704,6 +712,8 @@ const OJT = () => {
                         >
                           <img
                             src={img}
+                            alt={`${selectedWork.title} - Thumbnail ${idx + 1}`}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </button>
@@ -803,6 +813,8 @@ const OJT = () => {
                   <div className="relative overflow-hidden rounded-2xl shadow-xl h-80 bg-neutral-800">
                     <img
                       src={selectedSeminar.images?.[seminarImageIndex] || selectedSeminar.image}
+                      alt={selectedSeminar.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -823,6 +835,8 @@ const OJT = () => {
                         >
                           <img
                             src={img}
+                            alt={`${selectedSeminar.title} - Thumbnail ${idx + 1}`}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </button>
@@ -895,6 +909,8 @@ const OJT = () => {
             >
               <img
                 src={selectedImageArray[currentImageIndex]}
+                alt={`Gallery image ${currentImageIndex + 1}`}
+                loading="lazy"
                 className="w-full rounded-2xl shadow-2xl"
               />
 
@@ -955,6 +971,8 @@ const OJT = () => {
           >
             <motion.img
               src={selectedImage}
+              alt="Preview image"
+              loading="lazy"
               className="max-w-3xl w-full rounded-2xl shadow-2xl"
               initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

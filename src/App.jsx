@@ -5,8 +5,10 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Technologies from "./components/Technologies";
-import GlowingCursor from "./components/GlowingCursor"; // Add this import
+import GlowingCursor from "./components/GlowingCursor";
 import OJT from "./components/OJT";
+import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
 
 
 const App = () => {
@@ -43,6 +45,9 @@ const App = () => {
           <Contact/>
         </div>
       </div>
+
+      <Footer />
+      <BackToTop />
     </div>
   );
 };

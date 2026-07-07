@@ -78,7 +78,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-transparent bg-clip-text bg-gradient-to-r 
               from-pink-400 via-purple-400 to-blue-400 
-              animate-gradient-x text-[clamp(20px,3vw,36px)] font-light"
+              animate-gradient-x text-[clamp(18px,2.5vw,32px)] font-light leading-relaxed block min-h-[48px]"
             >
               <Typewriter
                 words={[
@@ -113,12 +113,12 @@ const Hero = () => {
               text-white font-medium rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/Havana, Russel G. - Resume.pdf";
-                link.download = "Russel-Havana_Resume.pdf";
+                link.href = "/public/RUSSEL-G-HAVANA-RESUME.pdf";
+                link.download = "Russel-Havana-Resume.pdf";
                 link.click();
               }}
             >
-              Download CV
+              Download Resume
             </motion.button>
           </div>
 
@@ -134,6 +134,8 @@ const Hero = () => {
             <div className="relative">
               <img
                 src={profilePic}
+                alt="Russel Havana - Profile"
+                loading="lazy"
                 className="w-72 h-72 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-2xl border border-white/20"
               />
 

@@ -44,6 +44,8 @@ const AutoSlider = ({ images }) => {
           <motion.img
             key={index}
             src={images[index]}
+            alt={`Project screenshot ${index + 1}`}
+            loading="lazy"
             className="max-w-full max-h-full object-contain"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

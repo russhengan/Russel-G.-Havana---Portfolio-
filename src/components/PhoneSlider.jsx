@@ -62,6 +62,8 @@ const PhoneSlider = ({ images }) => {
           <motion.img
             key={`p-${prevIndex}`}
             src={images[prevIndex]}
+            alt={`Project screenshot ${prevIndex + 1}`}
+            loading="lazy"
             className="absolute top-0 left-[-100%] w-full h-full object-cover"
             animate={{ left: "-100%" }}
           />
@@ -70,6 +72,8 @@ const PhoneSlider = ({ images }) => {
           <motion.img
             key={`c-${index}`}
             src={images[index]}
+            alt={`Project screenshot ${index + 1}`}
+            loading="lazy"
             className="absolute top-0 left-0 w-full h-full object-cover"
             initial={{ left: "100%" }}
             animate={{ left: "0%" }}
@@ -83,6 +87,8 @@ const PhoneSlider = ({ images }) => {
           <motion.img
             key={`n-${nextIndex}`}
             src={images[nextIndex]}
+            alt={`Project screenshot ${nextIndex + 1}`}
+            loading="lazy"
             className="absolute top-0 left-[100%] w-full h-full object-cover"
             animate={{ left: "100%" }}
           />
