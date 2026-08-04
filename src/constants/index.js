@@ -141,9 +141,9 @@ import Warehouse6 from "../assets/NTI Pics/Warehouse-6.jpg";
 import Warehouse7 from "../assets/NTI Pics/Warehouse-7.jpg";
 
 
-export const HERO_CONTENT = `BS Information Technology student from Pamantasan ng Lungsod ng Valenzuela with a passion for building innovative software solutions. I create clean, efficient, and user-centered applications. Currently seeking my first professional role to contribute to real-world projects and grow as a developer.`;
+export const HERO_CONTENT = `BS Information Technology student from Pamantasan ng Lungsod ng Valenzuela with a passion for software development and quality assurance. I build clean, efficient, and user-focused applications while ensuring reliability through proper testing and attention to detail. Currently seeking my first professional opportunity to contribute to real-world projects and grow as a software developer and QA professional.`;
 
-export const ABOUT_TEXT = `My passion for software development drives me to create innovative solutions that solve problems and enhance user experiences. As a 4th-year BS Information Technology student at Pamantasan ng Lungsod ng Valenzuela, I thrive on transforming complex challenges into elegant, efficient solutions, combining analytical thinking with creativity. What sets me apart is my dedication to continuous learning and collaboration, approaching each project as an opportunity to push boundaries and make a tangible impact. I view software development not just as a technical skill, but as a way to turn ideas into meaningful digital experiences that leave a lasting impression.`;
+export const ABOUT_TEXT = `My passion for software development and quality assurance drives me to build reliable solutions that solve problems and improve user experiences. I enjoy transforming ideas into efficient, well-tested applications by combining technical skills, analytical thinking, and attention to detail. With a commitment to continuous learning and collaboration, I approach every project as an opportunity to create high-quality software that delivers meaningful impact.`;
 
 export const EXPERIENCES = [
   {

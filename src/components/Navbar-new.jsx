@@ -1,4 +1,4 @@
-﻿import logo from "../assets/russel.jpg";
+import logo from "../assets/russel.jpg";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";

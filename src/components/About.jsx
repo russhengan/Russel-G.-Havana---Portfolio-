@@ -1,67 +1,65 @@
 import aboutImg from "../assets/russ-home.jpg";
 import { ABOUT_TEXT } from "../constants";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const highlights = [
+    { title: "Education", value: "BS Information Technology", detail: "Pamantasan ng Lungsod ng Valenzuela" },
+    { title: "Current focus", value: "Software Development", detail: "QA and testing with a product mindset" },
+    { title: "Strength", value: "Detail-oriented", detail: "I enjoy building polished, reliable experiences" },
+    { title: "Goal", value: "Growth-minded", detail: "Ready to contribute in real-world engineering teams" },
+  ];
+
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h2 className="my-20 text-center text-4xl font-bold">
-        About
-        <span className="text-neutral-400"> Me </span>
-      </h2>
-      <div className="flex flex-wrap">
-        <motion.div 
-        whileInView={{opacity:1, x:0}}
-        initial={{opacity:0, x:-100}}
-        transition={{duration:0.5}}
-        className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex items-center justify-center">
-            <img 
-              className="rounded-2xl w-full max-w-md object-cover shadow-lg hover:shadow-xl transition-shadow duration-300" 
-              src={aboutImg} 
-              alt="Russel Havana - Portfolio"
-              loading="lazy"
-            />
-          </div>
-        </motion.div>
+    <div className="border-b border-white/10 py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-2 sm:px-4 lg:px-6">
         <motion.div
-        whileInView={{opacity:1, x:0}} 
-        initial={{opacity:0, x:100}}
-        transition={{duration:0.5}}
-        className="w-full lg:w-1/2">
-            <div className="flex justify-center lg:justify-start lg:pl-8">
-              <div className="max-w-xl">
-                <p className="my-2 text-neutral-300 py-6 leading-relaxed text-justify">
-                  {ABOUT_TEXT}
-                </p>
-                
-                {/* Key Highlights */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="p-4 rounded-lg bg-neutral-900/50 border border-neutral-700 hover:border-purple-500/50 transition-colors"
-                  >
-                    <h4 className="text-purple-400 font-semibold mb-2">Education</h4>
-                    <p className="text-sm text-neutral-400">
-                      BS Information Technology<br/>
-                      Pamantasan ng Lungsod ng Valenzuela
-                    </p>
-                  </motion.div>
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="p-4 rounded-lg bg-neutral-900/50 border border-neutral-700 hover:border-purple-500/50 transition-colors"
-                  >
-                    <h4 className="text-purple-400 font-semibold mb-2">Focus</h4>
-                    <p className="text-sm text-neutral-400">
-                      Software Development<br/>
-                      Quality Assurance & Testing
-                    </p>
-                  </motion.div>
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">About me</p>
+          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">A developer who values clarity, quality, and user impact.</h2>
+        </motion.div>
+
+        <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
+            className="rounded-[2rem] border border-white/10 bg-slate-900/70 p-3"
+          >
+            <img
+              src={aboutImg}
+              alt="Russel Havana"
+              loading="lazy"
+              className="h-[360px] w-full rounded-[1.4rem] object-cover object-center sm:h-[440px]"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <p className="text-lg leading-8 text-slate-300">{ABOUT_TEXT}</p>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {highlights.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{item.title}</p>
+                  <p className="mt-2 text-base font-semibold text-white">{item.value}</p>
+                  <p className="mt-1 text-sm text-slate-400">{item.detail}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </motion.div>
+        </div>
       </div>
     </div>
   );

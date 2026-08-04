@@ -1,104 +1,45 @@
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+﻿import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const socialLinks = [
-    { icon: FaLinkedin, url: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FaGithub, url: "https://github.com", label: "GitHub" },
-    { icon: FaFacebook, url: "https://facebook.com", label: "Facebook" },
-    { icon: FaInstagram, url: "https://instagram.com", label: "Instagram" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/in/russel-havana-99017336a/", label: "LinkedIn" },
+    { icon: FaGithub, url: "https://github.com/russhengan", label: "GitHub" },
+    { icon: FaFacebook, url: "https://www.facebook.com/russhavana24", label: "Facebook" },
+    { icon: FaInstagram, url: "https://www.instagram.com/yorusswtf/", label: "Instagram" },
   ];
 
   return (
-    <footer className="border-t border-neutral-900 bg-neutral-950/50">
-      <div className="max-w-5xl mx-auto px-8 py-12">
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* About */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-lg font-semibold text-white mb-2">Russel Havana</h3>
-            <p className="text-neutral-400 text-sm">
-              QA Intern & Software Developer passionate about creating innovative digital solutions.
-            </p>
+    <footer className="border-t border-white/10 bg-slate-950/80">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-3">
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+            <h3 className="text-lg font-semibold text-white">Russel Havana</h3>
+            <p className="mt-2 text-sm leading-7 text-slate-400">Developer and QA-focused problem solver building practical, polished digital experiences.</p>
           </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-neutral-400">
-              {["About", "Technologies", "Projects", "OJT", "Contact"].map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase()}`}
-                    className="hover:text-purple-400 transition-colors duration-200"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+            <h3 className="text-lg font-semibold text-white">Quick links</h3>
+            <ul className="mt-3 space-y-2 text-sm text-slate-400">
+              <li><a href="#about" className="transition hover:text-cyan-200">About</a></li>
+              <li><a href="#technologies" className="transition hover:text-cyan-200">Skills</a></li>
+              <li><a href="#projects" className="transition hover:text-cyan-200">Projects</a></li>
+              <li><a href="#contact" className="transition hover:text-cyan-200">Contact</a></li>
             </ul>
           </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h3 className="text-lg font-semibold text-white mb-4">Get In Touch</h3>
-            <p className="text-sm text-neutral-400 mb-4">
-              Have a question? Feel free to reach out!
-            </p>
-            <a
-              href="#contact"
-              className="inline-block px-4 py-2 bg-gradient-to-r from-pink-400 to-purple-500 text-white text-sm font-medium rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-            >
-              Contact Me
-            </a>
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }}>
+            <h3 className="text-lg font-semibold text-white">Let’s connect</h3>
+            <div className="mt-3 flex gap-4">
+              {socialLinks.map(({ icon: Icon, url, label }) => (
+                <a key={label} href={url} target="_blank" rel="noreferrer" aria-label={label} className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 transition hover:border-cyan-400/40 hover:text-cyan-200">
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </motion.div>
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-neutral-800 my-8"></div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Copyright */}
-          <p className="text-sm text-neutral-500">
-            © {currentYear} Russel Havana. All rights reserved.
-          </p>
-
-          {/* Social Links */}
-          <motion.div
-            className="flex gap-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {socialLinks.map(({ icon: Icon, url, label }) => (
-              <motion.a
-                key={label}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                whileHover={{ scale: 1.2, color: "#a78bfa" }}
-                className="text-neutral-400 hover:text-purple-400 transition-colors duration-200"
-              >
-                <Icon size={24} />
-              </motion.a>
-            ))}
-          </motion.div>
+        <div className="mt-8 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
+          © {currentYear} Russel Havana. All rights reserved.
         </div>
       </div>
     </footer>

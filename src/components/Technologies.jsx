@@ -1,147 +1,84 @@
-import { AiOutlineHtml5 } from "react-icons/ai";
+﻿import { AiOutlineHtml5 } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { IoLogoJavascript } from "react-icons/io";
-import {
-  SiPhp,
-  SiBootstrap,
-  SiMysql,
-  SiMongodb,
-  SiExpress,
-  SiExpo,
-} from "react-icons/si";
+import { SiPhp, SiBootstrap, SiMysql, SiMongodb, SiExpress, SiExpo, SiTailwindcss } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
 import { motion } from "framer-motion";
 
-const iconVariants = (duration) => ({
-  initial: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
-    },
+const skillGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React", icon: RiReactjsLine, color: "text-cyan-400" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
+      { name: "JavaScript", icon: IoLogoJavascript, color: "text-yellow-400" },
+      { name: "HTML5", icon: AiOutlineHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: DiCss3, color: "text-blue-500" },
+    ],
   },
-});
+  {
+    title: "Backend & Data",
+    items: [
+      { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+      { name: "Express", icon: SiExpress, color: "text-slate-300" },
+      { name: "PHP", icon: SiPhp, color: "text-indigo-500" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-emerald-500" },
+    ],
+  },
+  {
+    title: "Mobile & QA",
+    items: [
+      { name: "React Native", icon: RiReactjsLine, color: "text-cyan-300" },
+      { name: "Expo", icon: SiExpo, color: "text-white" },
+      { name: "Testing mindset", icon: SiBootstrap, color: "text-fuchsia-400" },
+      { name: "UI/UX polish", icon: SiBootstrap, color: "text-purple-500" },
+    ],
+  },
+];
 
 const Technologies = () => {
   return (
-    <div className="border-b border-neutral-800 pb-24">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 1.5 }}
-        className="my-20 text-center text-4xl font-bold"
-      >
-        Technologies
-      </motion.h2>
+    <div className="border-b border-white/10 py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-2 sm:px-4 lg:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Core skills</p>
+          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">My practical toolkit for modern product and QA-focused work.</h2>
+        </motion.div>
 
-      <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1.5 }}
-        className="flex flex-wrap items-center justify-center gap-4"
-      >
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <AiOutlineHtml5 className="text-5xl text-orange-600" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <DiCss3 className="text-5xl text-blue-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <IoLogoJavascript className="text-5xl text-yellow-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiPhp className="text-5xl text-indigo-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiBootstrap className="text-5xl text-purple-600" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <RiReactjsLine className="text-5xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(6)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMysql className="text-5xl text-blue-600" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiMongodb className="text-5xl text-green-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.8)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <FaNodeJs className="text-5xl text-green-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3.8)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiExpress className="text-5xl text-gray-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(5.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiExpo className="text-5xl text-white" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4.2)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 p-4"
-        >
-          <SiTailwindcss className="text-5xl text-sky-400" />
-        </motion.div>
-      </motion.div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {skillGroups.map((group, groupIndex) => (
+            <motion.div
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: groupIndex * 0.08 }}
+              className="rounded-[1.5rem] border border-white/10 bg-slate-900/70 p-6"
+            >
+              <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {group.items.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.name} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
+                      <Icon className={`text-lg ${item.color}`} />
+                      <span>{item.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
