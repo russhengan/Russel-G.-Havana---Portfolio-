@@ -35,15 +35,6 @@
         { name: "UI/UX Polish", icon: SiBootstrap, color: "text-purple-500" },
       ],
     },
-    {
-      title: "Quality Assurance & Testing",
-      items: [
-        { name: "React Native", icon: RiReactjsLine, color: "text-cyan-300" },
-        { name: "Expo", icon: SiExpo, color: "text-white" },
-        { name: "Testing mindset", icon: SiBootstrap, color: "text-fuchsia-400" },
-        { name: "UI/UX polish", icon: SiBootstrap, color: "text-purple-500" },
-      ],
-    },
   ];
 
   const Technologies = () => {
