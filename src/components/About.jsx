@@ -47,7 +47,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <p className="text-lg leading-8 text-slate-300">{ABOUT_TEXT}</p>
+            <p className="text-lg leading-8 text-slate-300 text-justify">{ABOUT_TEXT}</p>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {highlights.map((item) => (

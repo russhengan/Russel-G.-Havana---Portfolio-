@@ -3,7 +3,7 @@ import profilePic from "../assets/about-22.jpg";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const roles = ["Software Developer", "QA & Testing Enthusiast", "Application Developer"];
+const roles = ["QA & Testing Enthusiast", "Application Developer", "Software Developer"];
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -67,11 +67,11 @@ const Hero = () => {
           <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             I’m Russel Havana,
             <span className="mt-3 block bg-gradient-to-r from-cyan-300 via-sky-400 to-fuchsia-400 bg-clip-text text-transparent">
-              {text || "Software Developer"}
+              {text || ""}
               <span className="ml-1 inline-block h-[0.9em] w-[0.5ch] animate-pulse rounded-sm bg-current align-middle" />
             </span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-300">
+          <p className="mt-6 text-lg leading-8 text-slate-300 text-justify">
             {HERO_CONTENT}
           </p>
 
