@@ -1,5 +1,5 @@
 import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/about-22.jpg";
+import profilePic from "../assets/grad-1.png";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
